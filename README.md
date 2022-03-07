@@ -9,7 +9,7 @@ It's easy to install and run it on your computer.
 
 ```shell
 # 1. First, clone the repo
-$ git clone https://github.com/lkiran/flask-test.git
+$ git clone https://github.com/lkiran5080/flask-test.git
 $ cd flask-test
 
 # 2. Install Python packages
