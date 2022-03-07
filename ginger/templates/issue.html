@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mx-auto my-4 sticky-top">
+                <img src="{{url_for('static',filename='project-task-list.jpg')}}" alt="" class="card-img-top">
+                <div class="card-header">
+                    <h5 class="card-title">{{issue.summary}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{issue.id}}</h6>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+                <div class="card-body">
+                    <h6 class="text-muted">Description</h6>
+                    <p>{{issue.description}}
+                    </p>
+                </div>
+
+                {% if issue.flagged%}
+                <div class="card-footer">
+                    <span class="text-danger">Flagged</span>
+                </div>
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md">
+
+            <div class="container mx-auto my-4">
+                <div class="container">
+                    <h6 class="">Discussion</h6>
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">@{{current_user.username}}</span>
+                            </div>
+
+
+
+
+                            {% if form.content.errors %}
+
+                            {{ form.content(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+
+                            {% else %}
+
+                            {{ form.content(class="form-control") }}
+
+                            {% endif %}
+
+
+
+
+                            <div class=" input-group-append">
+                                {{ form.submit(class="btn btn-outline-info") }}
+                            </div>
+                        </div>
+
+
+                    </form>
+
+
+                    <ul class="list-group list-group-flush my-4">
+                        {% for comment_item in comments %}
+                        <li class="list-group-item">
+                            <span class="text-muted">@{{comment_item['user'].username}} :</span>
+                            {{comment_item['comment'].content}}
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

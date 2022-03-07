@@ -1,0 +1,93 @@
+2022-03-07 10:34:16,424 ERROR: Exception on /login [GET] [in c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\users\routes.py", line 63, in login
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\layout.html", line 66, in top-level template code
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 47, in block 'content'
+    <a href="{{ url_for('users.reset_password') }}">Forgot Password?</a>
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'users.reset_request'. Did you mean 'users.register' instead?
+2022-03-07 10:35:11,123 ERROR: Exception on /login [GET] [in c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\users\routes.py", line 63, in login
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\layout.html", line 66, in top-level template code
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 47, in block 'content'
+    <a href="{{ url_for('users.reset_password') }}">Forgot Password?</a>
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'users.reset_request'. Did you mean 'users.register' instead?
+2022-03-07 10:43:05,445 ERROR: Exception on /login [GET] [in c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\users\routes.py", line 63, in login
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\layout.html", line 66, in top-level template code
+  File "C:\Users\laksh\Desktop\pmtest01\ginger\templates\login.html", line 47, in block 'content'
+    <a href="{{ url_for('users.reset_password') }}">Forgot Password?</a>
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\laksh\appdata\local\programs\python\python39\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'users.reset_request'. Did you mean 'users.register' instead?

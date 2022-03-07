@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% if projects %}
+            <div class="container my-4">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a class="btn btn-success" href="{{url_for('projects.create_project')}}">Create New Project</a>
+                    </li>
+                    {% for project in projects %}
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="btn" href="{{url_for('projects.get_project',project_name=project.name)}}">
+                                    <h5 class="card-title display-4">{{project.name}}</h5>
+                                </a>
+                                <p class="card-subtitle">{{ moment(project.date_created).format('LLL')}}</p>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <div class="container my-4">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a class="btn btn-success" href="{{url_for('projects.create_project')}}">Create New Project</a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

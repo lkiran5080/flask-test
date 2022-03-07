@@ -1,0 +1,46 @@
+/* a {
+    color: black;
+    font-weight: bold;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin: auto;
+}
+
+a:hover {
+    color: transparent;
+    transition: 500ms ease;
+} */
+
+
+.form-card {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-card {
+    width: 350px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+
+.profile-img {
+    display: block;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* .form-group.required .form-control-label:after {
+    content: "*";
+    color: red;
+} */

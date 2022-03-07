@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5 class="display-4">
+                            {{project.name}}
+                        </h5>
+                        <p class="card-subtitle text-muted">{{ moment(project.date_created).format('LLL') }}</p>
+                        <a class="btn btn-success m-2"
+                            href="{{url_for('projects.create_issue', project=project.name)}}">Start Chat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-sm-4">
+
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+
+                    <div class="form-group">
+
+                        {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-lg is-invalid",placeholder="username", value="") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.name(class="form-control form-control-lg",placeholder="username") }}
+                        {% endif %}
+                    </div>
+
+
+                </fieldset>
+                <div class="form-group my-2">
+                    {{ form.submit(class="btn btn-outline-success") }}
+                </div>
+
+            </form>
+            <div class="ul list-group">
+                <!--     <li class="list-group-item">
+                    <a class="btn btn-success" href="{{url_for('projects.create_issue', project=project.name)}}">Add New
+                        Member</a>
+                </li> -->
+                {% for m in project.members %}
+                <li class="list-group-item">
+                    {{m.username}}
+                </li>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="col-sm-8">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a class="btn btn-success" href="{{url_for('projects.create_issue', project=project.name)}}">Create
+                        New
+                        Issue</a>
+                </li>
+                {% for i in project.issues %}
+                <li class="list-group-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="{{url_for('projects.get_issue',id=i.id)}}" class="btn">
+                                <h5 class="card-title display-5">
+                                    {{i.summary}}
+                                </h5>
+                            </a>
+
+                            <p class="card-subtitle text-muted">
+                                {{i.issue_type}}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
