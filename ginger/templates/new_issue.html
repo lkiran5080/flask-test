@@ -100,7 +100,7 @@
 
                                 {% if form.labels.errors %}
 
-                                {{ form.labels(class="form-control form-control-lg is-invalid") }}
+                                {{ form.labels(class="form-control form-control-lg is-invalid",placeholder="label1;label2;label3...") }}
                                 <div class="invalid-feedback">
                                     {% for error in form.labels.errors %}
                                     <span>{{ error }}</span>
@@ -109,7 +109,7 @@
 
                                 {% else %}
 
-                                {{ form.labels(class="form-control form-control-lg") }}
+                                {{ form.labels(class="form-control form-control-lg",placeholder="label1;label2;label3...") }}
 
                                 {% endif %}
 

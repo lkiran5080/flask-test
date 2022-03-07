@@ -4,23 +4,12 @@ from ginger import db, login_manager, bcrypt
 from flask_login import UserMixin
 import jwt
 from time import time
+import json
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-""" members_table = db.Table('members',
-                         db.Column('user_id', db.Integer, db.ForeignKey(
-                             'users.id'), primary_key=True),
-                         db.Column('project_id', db.Integer, db.ForeignKey(
-                             'projects.id'), primary_key=True))
-
-followers_table = db.Table('followers',
-                         db.Column('follower_id', db.Integer, db.ForeignKey(
-                             'users.id'), primary_key=True),
-                         db.Column('followed_id', db.Integer, db.ForeignKey(
-                             'users.id'), primary_key=True)) """
 
 members_table = db.Table('members',
                          db.Column('user_id', db.Integer, db.ForeignKey(
@@ -65,6 +54,8 @@ class User(db.Model, UserMixin):
     issues = db.relationship('Issue', backref="issue_author", lazy='dynamic')
     comments = db.relationship(
         'Comment', backref='comment_author', lazy='dynamic')
+    notifications = db.relationship('Notification', backref='user',
+                                    lazy='dynamic')
 
     def __repr__(self) -> str:
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
@@ -93,6 +84,12 @@ class User(db.Model, UserMixin):
         except:
             return
         return User.query.get(id)
+    
+    def add_notification(self, name, data):
+        self.notifications.filter_by(name=name).delete()
+        n = Notification(name=name, payload_json=json.dumps(data), user=self)
+        db.session.add(n)
+        return n
     
     def follow(self, user):
         if not self.is_following(user):
@@ -200,6 +197,17 @@ class Comment(db.Model):
     def __repr__(self) -> str:
         return f"Comment('{self.content}', '{self.date_created}')"
 
+class Notification(db.Model):
+    __tablename__ = 'notifications'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    timestamp = db.Column(db.Float, index=True, default=time)
+    payload_json = db.Column(db.Text)
+
+    def get_data(self):
+        return json.loads(str(self.payload_json))
 
 """ class Sprint(db.Model):
 
