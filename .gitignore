@@ -1,3 +1,10 @@
+# my own files
+SNIPPETS.md
+READINGS.md
+ROADMAP.md
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
