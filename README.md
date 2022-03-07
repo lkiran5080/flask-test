@@ -3,61 +3,14 @@
 
 ## Setting Up
 
-
-### Quick Start
-
-1. Clone the repo
-  ```
-  $ git clone https://github.com/realpython/flask-boilerplate.git
-  $ cd flask-boilerplate
-  ```
-
-2. Initialize and activate a virtualenv:
-  ```
-  $ virtualenv --no-site-packages env
-  $ source env/bin/activate
-  ```
-
-3. Install the dependencies:
-  ```
-  $ pip install -r requirements.txt
-  ```
-
-5. Run the development server:
-  ```
-  $ python app.py
-  ```
-
-6. Navigate to [http://localhost:5000](http://localhost:5000)
-
-------------------
-
-## Run with Docker
-
-With **[Docker](https://www.docker.com)**, you can quickly build and run the entire application in minutes :whale:
-
-```shell
-# 1. First, clone the repo
-$ git clone https://github.com/mtobeiyf/keras-flask-deploy-webapp.git
-$ cd keras-flask-deploy-webapp
-
-# 2. Build Docker image
-$ docker build -t keras_flask_app .
-
-# 3. Run!
-$ docker run -it --rm -p 5000:5000 keras_flask_app
-```
-
-Open http://localhost:5000 and wait till the webpage is loaded.
-
 ## Local Installation
 
 It's easy to install and run it on your computer.
 
 ```shell
 # 1. First, clone the repo
-$ git clone https://github.com/mtobeiyf/keras-flask-deploy-webapp.git
-$ cd keras-flask-deploy-webapp
+$ git clone https://github.com/lkiran/flask-test.git
+$ cd flask-test
 
 # 2. Install Python packages
 $ pip install -r requirements.txt
@@ -68,28 +21,8 @@ $ python app.py
 
 Open http://localhost:5000 and have fun. :smiley:
 
-## Configuration
-
-The following environment variables are *optional*:
-
-| Name             | Purpose                                          |
-|------------------|--------------------------------------------------|
-| `APP_NAME`       | The name of the application. i.e Flask Bones     |
-| `MAIL_PORT`      | The port number of an SMTP server.               |
-| `MAIL_SERVER`    | The hostname of an SMTP server.                  |
-| `MEMCACHED_HOST` | The hostname of a memcached server.              |
-| `MEMCACHED_PORT` | The port number of a memcached server.           |
-| `POSTGRES_HOST`  | The hostname of a postgres database server.      |
-| `POSTGRES_PASS`  | The password of a postgres database user.        |
-| `POSTGRES_PORT`  | The port number of a postgres database server.   |
-| `POSTGRES_USER`  | The name of a postgres database user.            |
-| `REDIS_HOST`     | The hostname of a redis database server.         |
-| `REDIS_PORT`     | The port number of a redis database server.      |
-| `SECRET_KEY`     | A secret key required to provide authentication. |
-| `SERVER_NAME`    | The hostname and port number of the server.      |
 
 
-## Running the App
 
 ## Built With
 
@@ -136,13 +69,3 @@ The following environment variables are *optional*:
 - [flask-babel](https://github.com/python-babel/flask-babel) - i18n and l10n support for Flask based on Babel and pytz
 
 ---
-
-## Project Structure
-
-## Screenshots
-
-## What's next?
-
-## References
-
-## License
